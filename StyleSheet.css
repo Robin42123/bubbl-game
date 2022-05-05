@@ -1,0 +1,23 @@
+﻿body {
+}
+.bubble{
+    display:block;
+    position:absolute;
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    bottom:100%;
+    animation-name:jk;
+    animation-duration:6s;
+    animation-iteration-count:1;
+}
+@keyframes jk{
+    0%{
+        bottom:0;
+    }
+    100%{
+        bottom:100%
+    }
+}

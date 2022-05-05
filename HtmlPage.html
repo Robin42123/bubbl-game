@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link href="StyleSheet.css" rel="stylesheet" />
+
+</head>
+<body id="bd1" style="background-color:black;color:white">
+   score:- <label style="color:white;margin-top:80px" id="lbl1"></label><br />
+    count:-<label style="color:white"id="lbl2"></label><br />
+    u missed:-<label style="color:white" id="lbl3"></label>
+    
+
+    <!--<button onclick="start()">start</button>-->
+
+
+    <script>
+        //var timer = setInterval(function () {
+        //var box1 = document.createElement("div");
+        //box1.style.background = "red";
+        //box1.style.borderRadius = "50%";
+        //box1.style.height = "100px";
+        //box1.style.width = "100px";
+        //bd1.appendChild(box1);
+
+
+
+
+        //}, 1000);
+
+        start();
+        var score=0
+        var c=0
+        remove=0
+
+        var rcount = 0;
+        var rtimer
+        var count = 0
+        var timer;
+        function timercounter() {
+
+            var box1 = document.createElement("div");
+            var min = 0;
+            var max = 80; 
+            var pos = Math.floor(Math.random() * (max - min) + min);
+            var pos1 = Math.floor(Math.random() * (max - min) + min);
+            box1.id = "bx"
+           
+            box1.style.borderRadius = "50%";
+
+            box1.style.height = "100px";
+            box1.style.width = "100px";
+            box1.style.position = "absolute"
+            box1.style.bottom =pos + "%";
+            box1.style.left = pos1 + "%";          
+            box1.classList.add("bubble-blast")
+            box1.className="bubble"
+
+            box1.addEventListener("click",()=>{
+                bd1.removeChild(box1)
+                  score++;
+            lbl1.innerHTML=score;
+          
+            
+            })
+          
+             setInterval(removetimer, 3000)
+
+        function removetimer() {
+            bd1.removeChild(box1)
+            remove++
+            lbl3.innerHTML=remove
+            if(remove==5){
+                alert("game over")
+              
+                    window.location.href = "htmlpage.html";
+                
+             
+                
+
+
+            }
+
+            //if (rcount == 5) {
+            //    clearInterval(rtimer)
+            //    rcount = 0
+            //}
+            //else {
+            //    rcount++
+            //    bd1.innerHTML = rcount
+
+            //}
+
+        }
+
+            bd1.appendChild(box1);
+            c++;
+            lbl2.innerHTML=c;
+
+          
+            a = ["red", "blue", "pink", "green", ]
+            b = ["S", "R", "F", "T"]
+            box1.style.textAlign = "center"
+            box1.style.paddingTop = "40PX"
+            box1.style.boxSizing = "BORDER-BOX"
+            box1.innerHTML = b[count]
+            box1.style.background = a[count];
+            count++
+            if (count == 4) {
+                count = 0
+
+            }
+
+
+
+        }
+        
+
+       
+        function start() {
+
+
+            timer = setInterval(timercounter, 1000)
+
+
+        }
+
+
+    </script>
+</body>
+</html>
